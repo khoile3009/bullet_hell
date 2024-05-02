@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bshnsj3ui41we"]
+[gd_scene load_steps=5 format=3 uid="uid://bshnsj3ui41we"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_akj0e"]
 [ext_resource type="Texture2D" uid="uid://c65u8thvdlykn" path="res://sprites/ship_A.png" id="2_5q8ng"]
+[ext_resource type="PackedScene" uid="uid://2di530bkt8kp" path="res://Prefab/player_bullet.tscn" id="3_euk11"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4nfnk"]
 radius = 18.0
@@ -9,6 +10,7 @@ height = 56.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_akj0e")
+bullet_prefab = ExtResource("3_euk11")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -18,3 +20,6 @@ texture = ExtResource("2_5q8ng")
 position = Vector2(-1, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4nfnk")
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
+position = Vector2(36.165, 0)
